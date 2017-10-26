@@ -1,0 +1,40 @@
+---
+title: "01_input-check.Rmd"
+author: "Jason Torres"
+date: "October 26, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+```{r}
+df1 <- fread(file=plot.dir %&% "results_blocks.txt")
+df2 <- fread(file=plot.dir %&% "results_func-cred-sets.txt")
+str(df2)
+
+#8	95961626	107_1
+#8	95685147	107_2
+#8	96092422	107_3
+filter(df2,Locus.ID=="107_1") %>% arrange(desc(PPA)) %>% select(one_of("Locus.ID","SNPID","PPA"))
+filter(df2,Locus.ID=="107_2") %>% arrange(desc(PPA)) %>% select(one_of("Locus.ID","SNPID","PPA"))
+filter(df2,Locus.ID=="107_3") %>% arrange(desc(PPA)) %>% select(one_of("Locus.ID","SNPID","PPA"))
+
+#9	22134068	117_1
+#9	22043612	117_2
+#9	22133773	117_3
+#9	22134172	117_4
+#9	22157908	117_5
+#9	22301092	117_6
+filter(df2,Locus.ID=="117_1") %>% arrange(desc(PPA)) %>% select(one_of("Locus.ID","SNPID","PPA"))
+filter(df2,Locus.ID=="117_2") %>% arrange(desc(PPA)) %>% select(one_of("Locus.ID","SNPID","PPA"))
+filter(df2,Locus.ID=="117_5") %>% arrange(desc(PPA)) %>% select(one_of("Locus.ID","SNPID","PPA"))
+filter(df2,Locus.ID=="117_6") %>% arrange(desc(PPA)) %>% select(one_of("Locus.ID","SNPID","PPA"))
+
+```
+
