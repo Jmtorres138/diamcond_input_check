@@ -1,0 +1,1 @@
+# diamcond_input_check
